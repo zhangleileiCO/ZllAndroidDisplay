@@ -1,0 +1,21 @@
+FragmentTabHost + Fragment实现底部菜单栏（也可以用TabHost + Fragment实现底部菜单栏，不过这种技术应该被淘汰）
+
+1.gravity和layout_gravity的区别
+android:gravity：是对view控件本身来说的，是用来设置view本身的内容应该显示在view的什么位置，默认值是左侧。也可以用来设置布局中的控件位置
+android:layout_gravity：是相对于包含改元素的父元素来说的，设置该元素在父元素的什么位置
+
+2.mipmap和drawable文件夹的区别
+如果图标有固定的尺寸，不需要更改，那么drawable更加适合。
+如果需要变大变小、有动画的，放在mipmap中能有更高的质量。
+
+3.FragmentTabHost 的缺点
+FragmentTabHost 每次切换Fragment事都会走一遍 onCreateView和 onResume方法；
+TabWidget 的id必须是android:id="@android:id/tabs"
+FrameLayout 的id必须是android:id="@android:id/tabcontent"
+
+4.对每次都调用 onCreateView 方法的思考
+可继承 FragmentTabHost 修改attach为show 修改detach为hide
+
+5.FragmentTabHost继承了TabHost实现abHost的接口TOnTabChangeListener
+
+6.不能左右滑动

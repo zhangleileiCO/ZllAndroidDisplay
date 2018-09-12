@@ -1,1 +1,1 @@
-include ':app', ':fragmenttabhost_fragment'
+include ':app', ':fragmenttabhost_fragment', ':radiogroup+fragment'

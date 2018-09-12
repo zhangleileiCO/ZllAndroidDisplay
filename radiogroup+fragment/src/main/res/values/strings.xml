@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RadioGroup+Fragment</string>
+
+    <string name="tab_title_home">首页</string>
+    <string name="tab_title_around">周边</string>
+    <string name="tab_title_me">我的</string>
+    <string name="tab_title_more">更多</string>
+</resources>

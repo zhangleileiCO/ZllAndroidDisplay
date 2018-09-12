@@ -1,0 +1,41 @@
+RadioGroup + RadioButton + Fragment实现底部菜单栏
+1.要实现导航栏在下，Fragment布局在上这种布局有2种方式
+使用 LinearLayout 布局
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom">
+    </RadioGroup>
+</LinearLayout>
+使用 RelativeLayout 布局
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <RadioGroup
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+    </RadioGroup>
+</RelativeLayout>
+
+2.tools:context=".MainActivity"作用
+这一句不会被打包进APK
+只是在Layout文件的渲染时获取当前layout对应activity的Theme,也就是在design中渲染时起作用
+
+3.不能左右滑动
